@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-boxs;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        margin: 0;
+        background-color: rgb(111, 106, 106);
+      }
+      button{
+        border-radius: 50px;
+        font-size: medium;
+        font-weight: 200;
+        background-color: rgb(60, 155, 214);
+      }
+      button:hover{
+         transform: scale(1.1);
+        transition: transform 0.01 ease;
+        box-shadow: 0 0 15px rgb(213, 99, 165);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="margin-bottom: 50px">BMI Calculator</h1>
+    <div>
+      <div style="margin-bottom: 25px">Height in CM <input id="height" type="text" /></div>
+      <div style="margin-bottom: 40px">Weight in KG <input id="weight" type="text" /></div>
+      <div>
+      
+        <button id="input"
+          style="width: 150px; height: 20px"
+        
+           >Calculate</button>
+     <p class="ans" style=" margin:30px ;color:white ; font-size:x-large" ></p> 
+     </div>
+    </div>
+    <div style="margin: 50px;">
+        <h1 style="font-size: large;">BMI Weight Guide</h1>
+        <h4 style="font-size:small">Under Weight = Less than 18.6</h4>
+        <h4 style="font-size:small">Normal Range = 18.6 and 24.9/h4>
+        <h4 style="font-size:small">Overweight = Greater than 24.9 </h4>
+        <p id="report" style=" margin-top:25px ;color:white ;font-size:xx-large"></p>
+    </div
+      
+  </body>
+  <script>
+let cal=document.querySelector("#input")
+let height=document.querySelector("#height")
+let weight=document.querySelector("#weight")
+let ans=document.querySelector(".ans")
+let rep=document.querySelector("#report");
+cal.addEventListener("click", () => {
+  let num1=parseInt(weight.value)
+  let num2=parseInt(height.value)
+  let num3=(((num1)/(num2*num2))*10000)
+  ans.innerHTML=(((num1)/(num2*num2))*10000).toFixed(2);
+
+  if(num3<18.6)
+  {
+     rep.innerHTML="Under Weight"
+  }
+  else if(num3>=18.6&&num3<=24.9)
+  {
+   rep.innerHTML="Normal Range"
+  }
+  else{
+    rep.innerHTML="Overweight"
+  }
+ 
+});
+  </script>
+</html>
