@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Use <strong>Start</strong> to print and <strong>Stop</strong> to stop
+    </h1>
+    <button id="start" class="ak">start</button>
+    <button id="stop" class="ak">stop</button>
+    <p id="container"></p>
+  </body>
+  <script>
+    let hel;
+    function changeBackground() {
+      let h = Math.random;
+    }
+    document.querySelector("#start").addEventListener("click", () => {
+      if (!hel) {
+        hel = setInterval(changetext, 1000);
+      }
+    });
+    document.querySelector("#stop").addEventListener("click", () => {
+      clearInterval(hel);
+      hel = null;
+    });
+  </script>
+</html>
